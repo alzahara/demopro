@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+<h2 class="mb-5">Employee List</h2>
+{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        {% for e in employee %}
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+  <img src="{{e.image.url}}"  height="200px" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{e.name}}</h5>
+    <p class="card-text">{{e.designation}}</p>
+    <a href="{% url 'employee_details' e.id %}" class="btn btn-primary">Details</a>
+  </div>
+</div></div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

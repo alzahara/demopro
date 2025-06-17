@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+<title>Document</title>
+{% endblock %}
+</head>
+
+<body>
+    {% block content %}
+    <h1 style="text-align:center;">Welcome to Home Page
+        {% if user.is_authenticated %}
+
+        {{user.username}}
+                    <a class="btn btn-secondary" href="{% url 'signout' %}" type="submit">Logout</a>
+        <a href="{% url 'password_change' %}">Change Password</a>
+        {% else %}
+        Guest
+         <a class="btn btn-secondary" href="{% url 'signup' %}" type="submit">Register</a>
+    <a class="btn btn-secondary" href="{% url 'signin' %}" type="submit">Login</a>
+        {% endif %}
+    </h1>
+    <br>
+
+
+
+    {% endblock %}
+</body>
+
+</html>

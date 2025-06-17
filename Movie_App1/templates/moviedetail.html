@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>MovieList</title>
+{% endblock %}
+{% block content %}
+<!--card-->
+<h2 class="mb-5">Movie Details</h2>
+<div class="container w-50 border border-2">
+    <div class="card mb-3 mx-auto" style="width: 90%;">
+   <div class="row g-0">
+       <div class="col-md-4 p-2">
+          <img src="{{movie.image.url}}" class="rounded-start" height="450px" width="100%" alt="...">
+       </div>
+       <div class="col-md-8">
+           <div class="card-body p-4">
+               <h3 class="card-title">{{movie.movie_name}}</h3>
+               <p class="card-text" style="text-align-justify;text-indent:50px;">{{movie.description}}</p>
+               <p class="card-text"><small class="text-muted">{{movie.director}}</small></p>
+                   <div class="d-flex justify-content-evenly">
+                       <a class="btn btn-secondary px-4" href="{% url 'deletemovie' movie.id %}">Delete</a>
+                       <a class="btn btn-secondary px-4" href="{% url 'editmovie' movie.id %}" >Edit</a>
+                   </div>
+           </div>
+       </div>
+        </div>
+</div>
+</div>
+
+
+
+<!--    {{movie}}-->
+<!--    table-->
+<!--<div class="container w-50 mx-auto mt-4">-->
+<!--    <table class="table table-bordered mt-4">-->
+<!--        <tr>-->
+<!--            <th>Movie name</th>-->
+<!--            <td>{{movie.movie_name}}</td>-->
+<!--        </tr>-->
+<!--         <tr>-->
+<!--            <th>Description</th>-->
+<!--            <td>{{movie.description}}</td>-->
+<!--        </tr>-->
+<!--         <tr>-->
+<!--            <th>Language</th>-->
+<!--            <td>{{movie.language}}</td>-->
+<!--        </tr>-->
+<!--         <tr>-->
+<!--            <th>Directorname</th>-->
+<!--            <td>{{movie.director_name}}</td>-->
+<!--        </tr>-->
+<!--         <tr>-->
+<!--            <th>Year</th>-->
+<!--            <td>{{movie.year}}</td>-->
+<!--        </tr>-->
+<!--         <tr>-->
+<!--            <th>Cover</th>-->
+<!--            <td><img src="{{movie.image.url}}" height="150px" width="150px"></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+<!--</div>-->
+{% endblock %}

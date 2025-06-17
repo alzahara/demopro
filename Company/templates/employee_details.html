@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+<h2 class="mb-5">Employeelist</h2>
+{% endblock %}
+{% block content %}
+<h2 class="mb-5">Employee Details</h2>
+<div class="container w-50 border border-2">
+    <div class="card mb-3 mx-auto" style="width: 90%;">
+   <div class="row g-0">
+       <div class="col-md-4 p-2">
+          <img src="{{employee.image.url}}" class="rounded-start" height="450px" width="100%" alt="...">
+       </div>
+       <div class="col-md-8">
+           <div class="card-body p-4">
+               <h3 class="card-title">{{employee.name}}</h3>
+               <p class="card-text" style="text-align-justify;text-indent:50px;">{{employee.designation}}</p>
+               <p class="card-text"><small class="text-muted">{{employee.place}}</small></p>
+                   <div class="d-flex justify-content-evenly">
+                       <a class="btn btn-secondary px-4"  href="{% url 'employee_delete' employee.id %}">Delete</a>
+                       <a class="btn btn-secondary px-4"  href="{% url 'employee_edit' employee.id %}">Edit</a>
+
+                   </div>
+           </div>
+       </div>
+        </div>
+</div>
+</div>
+{% endblock %}
